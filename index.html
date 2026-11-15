@@ -78,6 +78,11 @@
       font-size: 1.25rem;
     }
 
+    h4 {
+      margin: 0 0 0.3rem;
+      font-size: 1rem;
+    }
+
     p {
       margin: 0;
     }
@@ -205,16 +210,30 @@
       color: var(--ink);
     }
 
+    .source-info {
+      margin-top: 0.8rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .source-info summary {
+      cursor: pointer;
+      font-weight: 600;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      color: var(--teal-dark);
+      padding: 0.7rem 0;
+    }
+
+    .source-info[open] {
+      padding-bottom: 0.2rem;
+    }
+
     .where {
-      margin-top: 0.9rem;
+      margin-top: 0.3rem;
       padding: 0.7rem 0.9rem;
       background: var(--mist);
       border-radius: 6px;
-    }
-
-    .where h4 {
-      margin: 0 0 0.3rem;
-      font-size: 1rem;
     }
 
     .where ul {
@@ -222,25 +241,12 @@
       padding-left: 1.2rem;
     }
 
-    details {
-      margin-top: 0.8rem;
-    }
-
-    summary {
-      cursor: pointer;
-      font-weight: 600;
-      min-height: 44px;
-      display: flex;
-      align-items: center;
-      color: var(--teal-dark);
-    }
-
-    details ul {
-      margin: 0.2rem 0 0;
+    .source-info > ul {
+      margin: 0.2rem 0 0.6rem;
       padding-left: 1.2rem;
     }
 
-    details li {
+    .source-info li {
       margin-bottom: 0.3rem;
       max-width: 46rem;
     }
@@ -298,24 +304,31 @@
         <button type="button" class="chip" data-need="scholarly" aria-pressed="false">
           Scholarly research
         </button>
+
         <button type="button" class="chip" data-need="background" aria-pressed="false">
           Background information
         </button>
+
         <button type="button" class="chip" data-need="opinion" aria-pressed="false">
           Opinion or public views
         </button>
+
         <button type="button" class="chip" data-need="primary" aria-pressed="false">
           A primary source
         </button>
+
         <button type="button" class="chip" data-need="data" aria-pressed="false">
           Statistics or data
         </button>
+
         <button type="button" class="chip" data-need="images" aria-pressed="false">
           Images or artwork
         </button>
+
         <button type="button" class="chip" data-need="news" aria-pressed="false">
           News and current events
         </button>
+
         <button type="button" class="chip" data-need="course" aria-pressed="false">
           My course content
         </button>
@@ -329,11 +342,14 @@
     <p id="status" role="status" aria-live="polite"></p>
 
     <section class="results" aria-label="Sources">
-      <article class="card" data-needs="scholarly">
+
+      <article class="card" data-needs="scholarly" hidden>
         <header>
           <span class="icon" aria-hidden="true">&#128240;</span>
+
           <div>
             <h3>Scholarly sources</h3>
+
             <p class="example">
               <strong>Example:</strong> a peer reviewed journal article
               &middot;
@@ -342,24 +358,36 @@
           </div>
         </header>
 
-        <div class="where">
-          <h4>Where to look</h4>
-          <ul>
-            <li>
-              <a href="https://www.rmit.edu.au/library">LibrarySearch</a>
-            </li>
-            <li>Library databases</li>
-            <li>
-              <a href="https://scholar.google.com/">Google Scholar</a>
-            </li>
-          </ul>
-        </div>
+        <details class="source-info">
+          <summary>Where to look</summary>
 
-        <details>
-          <summary>About this source</summary>
+          <div class="where">
+            <h4>Where to look</h4>
+
+            <ul>
+              <li>
+                <a href="https://www.rmit.edu.au/library">
+                  LibrarySearch
+                </a>
+              </li>
+              <li>Library databases</li>
+              <li>
+                <a href="https://scholar.google.com/">
+                  Google Scholar
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <h4>About this source</h4>
+
           <ul>
-            <li>Journal articles provide current information on specific topics.</li>
-            <li>Academic journal articles contain scholarly research and analysis.</li>
+            <li>
+              Journal articles provide current information on specific topics.
+            </li>
+            <li>
+              Academic journal articles contain scholarly research and analysis.
+            </li>
             <li>
               Trade journals and industry magazines are written by practitioners.
               They focus on working in the profession and give industry trends
@@ -372,8 +400,10 @@
       <article class="card" data-needs="background">
         <header>
           <span class="icon" aria-hidden="true">&#128214;</span>
+
           <div>
             <h3>Books</h3>
+
             <p class="example">
               <strong>Example:</strong> a textbook
               &middot;
@@ -382,21 +412,31 @@
           </div>
         </header>
 
-        <div class="where">
-          <h4>Where to look</h4>
+        <details class="source-info">
+          <summary>Where to look</summary>
+
+          <div class="where">
+            <h4>Where to look</h4>
+
+            <ul>
+              <li>
+                <a href="https://www.rmit.edu.au/library">
+                  LibrarySearch
+                </a>
+              </li>
+              <li>Print collection</li>
+            </ul>
+          </div>
+
+          <h4>About this source</h4>
+
           <ul>
             <li>
-              <a href="https://www.rmit.edu.au/library">LibrarySearch</a>
+              Books give background and in-depth information.
             </li>
-            <li>Print collection</li>
-          </ul>
-        </div>
-
-        <details>
-          <summary>About this source</summary>
-          <ul>
-            <li>Books give background and in-depth information.</li>
-            <li>Textbooks and academic books are a great place to start your research.</li>
+            <li>
+              Textbooks and academic books are a great place to start your research.
+            </li>
             <li>
               They can give an overview of the topic, cover key concepts and
               theories, and include detailed information.
@@ -408,8 +448,10 @@
       <article class="card" data-needs="opinion">
         <header>
           <span class="icon" aria-hidden="true">&#128187;</span>
+
           <div>
             <h3>Websites, social media and AI-generated content</h3>
+
             <p class="example">
               <strong>Example:</strong> social media or a blog
               &middot;
@@ -418,17 +460,23 @@
           </div>
         </header>
 
-        <div class="where">
-          <h4>Where to look</h4>
-          <ul>
-            <li>Online, using a web browser</li>
-          </ul>
-        </div>
+        <details class="source-info">
+          <summary>Where to look</summary>
 
-        <details>
-          <summary>About this source</summary>
+          <div class="where">
+            <h4>Where to look</h4>
+
+            <ul>
+              <li>Online, using a web browser</li>
+            </ul>
+          </div>
+
+          <h4>About this source</h4>
+
           <ul>
-            <li>Websites and social media can be useful sources of information.</li>
+            <li>
+              Websites and social media can be useful sources of information.
+            </li>
             <li>
               AI tools can generate text, images, code and other content based
               on your specific prompt.
@@ -446,8 +494,10 @@
       <article class="card" data-needs="primary">
         <header>
           <span class="icon" aria-hidden="true">&#9878;&#65039;</span>
+
           <div>
             <h3>Primary sources</h3>
+
             <p class="example">
               <strong>Example:</strong> legislation
               &middot;
@@ -456,25 +506,34 @@
           </div>
         </header>
 
-        <div class="where">
-          <h4>Where to look</h4>
-          <ul>
-            <li>
-              A legal database or website like
-              <a href="https://www.austlii.edu.au/">AustLII</a>
-            </li>
-            <li>
-              <a href="https://rmit.libguides.com/law-justice">
-                Law and Justice Subject Guide
-              </a>
-            </li>
-          </ul>
-        </div>
+        <details class="source-info">
+          <summary>Where to look</summary>
 
-        <details>
-          <summary>About this source</summary>
+          <div class="where">
+            <h4>Where to look</h4>
+
+            <ul>
+              <li>
+                A legal database or website like
+                <a href="https://www.austlii.edu.au/">
+                  AustLII
+                </a>
+              </li>
+
+              <li>
+                <a href="https://rmit.libguides.com/law-justice">
+                  Law and Justice Subject Guide
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <h4>About this source</h4>
+
           <ul>
-            <li>Use when you need direct, original evidence for your research.</li>
+            <li>
+              Use when you need direct, original evidence for your research.
+            </li>
             <li>
               Examples include survey results, interviews, historical documents,
               artworks, experiments, laws and raw data.
@@ -486,8 +545,10 @@
       <article class="card" data-needs="data">
         <header>
           <span class="icon" aria-hidden="true">&#128202;</span>
+
           <div>
             <h3>Statistics and data</h3>
+
             <p class="example">
               <strong>Example:</strong> industry forecasting data
               &middot;
@@ -496,28 +557,49 @@
           </div>
         </header>
 
-        <div class="where">
-          <h4>Where to look</h4>
+        <details class="source-info">
+          <summary>Where to look</summary>
+
+          <div class="where">
+            <h4>Where to look</h4>
+
+            <ul>
+              <li>
+                <a href="https://rmit.libguides.com/company-industry">
+                  Industry and company databases
+                </a>
+              </li>
+
+              <li>
+                <a href="https://www.abs.gov.au/">
+                  Australian Bureau of Statistics
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <h4>About this source</h4>
+
           <ul>
             <li>
-              <a href="https://rmit.libguides.com/company-industry">
-                Industry and company databases
-              </a>
+              Statistics and data can help you identify patterns, compare
+              results and support your research.
             </li>
             <li>
-              <a href="https://www.abs.gov.au/">
-                Australian Bureau of Statistics
-              </a>
+              Check who collected the data, when it was collected and how it
+              was produced.
             </li>
           </ul>
-        </div>
+        </details>
       </article>
 
       <article class="card" data-needs="images">
         <header>
           <span class="icon" aria-hidden="true">&#128444;&#65039;</span>
+
           <div>
             <h3>Images and artwork</h3>
+
             <p class="example">
               <strong>Example:</strong> photos
               &middot;
@@ -526,20 +608,32 @@
           </div>
         </header>
 
-        <div class="where">
-          <h4>Where to look</h4>
-          <ul>
-            <li>
-              Database:
-              <a href="https://www.jstor.org/">JSTOR</a>
-            </li>
-            <li>Websites, such as museums and galleries</li>
-            <li>Print collection</li>
-          </ul>
-        </div>
+        <details class="source-info">
+          <summary>Where to look</summary>
 
-        <details>
-          <summary>About this source</summary>
+          <div class="where">
+            <h4>Where to look</h4>
+
+            <ul>
+              <li>
+                Database:
+                <a href="https://www.jstor.org/">
+                  JSTOR
+                </a>
+              </li>
+
+              <li>
+                Websites, such as museums and galleries
+              </li>
+
+              <li>
+                Print collection
+              </li>
+            </ul>
+          </div>
+
+          <h4>About this source</h4>
+
           <ul>
             <li>
               Images may come from a database, website, book or other publication.
@@ -556,34 +650,43 @@
       <article class="card" data-needs="news">
         <header>
           <span class="icon" aria-hidden="true">&#128211;</span>
+
           <div>
             <h3>Magazines and newspapers</h3>
+
             <p class="example">
               <strong>Good for:</strong> short, news-style articles
             </p>
           </div>
         </header>
 
-        <div class="where">
-          <h4>Where to look</h4>
-          <ul>
-            <li>
-              <a href="https://rmit.primo.exlibrisgroup.com/permalink/61RMIT_INST/1kg4k2u/alma9921587307101341">
-                Flipster
-              </a>
-            </li>
-            <li>
-              <a href="https://rmit.libguides.com/news">
-                News and newspapers subject guide
-              </a>
-            </li>
-          </ul>
-        </div>
+        <details class="source-info">
+          <summary>Where to look</summary>
 
-        <details>
-          <summary>About this source</summary>
+          <div class="where">
+            <h4>Where to look</h4>
+
+            <ul>
+              <li>
+                <a href="https://rmit.primo.exlibrisgroup.com/permalink/61RMIT_INST/1kg4k2u/alma9921587307101341">
+                  Flipster
+                </a>
+              </li>
+
+              <li>
+                <a href="https://rmit.libguides.com/news">
+                  News and newspapers subject guide
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <h4>About this source</h4>
+
           <ul>
-            <li>Newspapers and magazines give short news articles.</li>
+            <li>
+              Newspapers and magazines give short news articles.
+            </li>
             <li>
               Popular magazines are not always written by experts. They often
               contain advertisements, graphics and few references.
@@ -595,8 +698,10 @@
       <article class="card" data-needs="course">
         <header>
           <span class="icon" aria-hidden="true">&#127979;</span>
+
           <div>
             <h3>Course materials</h3>
+
             <p class="example">
               <strong>Good for:</strong> content your lecturer has chosen for
               your course
@@ -604,17 +709,25 @@
           </div>
         </header>
 
-        <div class="where">
-          <h4>Where to look</h4>
-          <ul>
-            <li>Your course on Canvas</li>
-          </ul>
-        </div>
+        <details class="source-info">
+          <summary>Where to look</summary>
 
-        <details>
-          <summary>About this source</summary>
+          <div class="where">
+            <h4>Where to look</h4>
+
+            <ul>
+              <li>
+                Your course on Canvas
+              </li>
+            </ul>
+          </div>
+
+          <h4>About this source</h4>
+
           <ul>
-            <li>Course materials are a valuable source of information.</li>
+            <li>
+              Course materials are a valuable source of information.
+            </li>
             <li>
               They may include lecture materials, recordings and slides from
               your course on Canvas.
@@ -622,9 +735,12 @@
           </ul>
         </details>
       </article>
+
     </section>
 
-    <p class="note">Not sure which one to choose? Ask a librarian.</p>
+    <p class="note">
+      Not sure which one to choose? Ask a librarian.
+    </p>
   </main>
 
   <script>
@@ -651,7 +767,9 @@
         chips.forEach(function (chip) {
           chip.setAttribute(
             "aria-pressed",
-            chip.getAttribute("data-need") === active ? "true" : "false"
+            chip.getAttribute("data-need") === active
+              ? "true"
+              : "false"
           );
         });
 
@@ -659,6 +777,7 @@
           var selectedChip = document.querySelector(
             '.chip[data-need="' + active + '"]'
           );
+
           var label = selectedChip.textContent.trim();
 
           status.textContent =
@@ -678,7 +797,9 @@
       chips.forEach(function (chip) {
         chip.addEventListener("click", function () {
           var need = chip.getAttribute("data-need");
+
           active = active === need ? null : need;
+
           render();
         });
       });
